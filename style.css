@@ -1,0 +1,257 @@
+/* CSS Variables & Global Styles */
+:root {
+  --accent: #60a5fa; /* ปรับสีฟ้าให้สว่างวาบขึ้นเล็กน้อย */
+  --accent-glow: rgba(96, 165, 250, 0.15);
+  --bg-color: #0b0f19; /* พื้นหลังเข้มลึกขึ้น */
+  --panel-bg: #151f32; /* แผงข้อความดูมีมิติขึ้น */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --border-color: #223147;
+  /* เพิ่มฟอนต์คุณสมบัติดี ๆ สำหรับภาษาไทยและอังกฤษ */
+  --font-sans: 'Inter', 'Noto Sans Thai', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-color);
+  /* เพิ่มลูกเล่นสีพื้นหลังแบบ Gradient จาง ๆ */
+  background-image: radial-gradient(circle at top right, rgba(59, 130, 246, 0.05), transparent 400px);
+  color: var(--text-primary);
+  line-height: 1.7;
+  padding: 4rem 1.5rem;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 680px; /* บีบหน้าเว็บให้กระชับ สายตาอ่านง่ายขึ้น */
+  margin: 0 auto;
+}
+
+/* Boot animation / header text */
+.boot {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  background: rgba(21, 31, 50, 0.4);
+  backdrop-filter: blur(8px); /* เอฟเฟกต์กระจกฝ้า */
+  padding: 1.2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.boot b {
+  color: #34d399; /* สีเขียวสว่างขึ้น */
+  text-shadow: 0 0 10px rgba(52, 211, 153, 0.3);
+}
+
+/* Hero Section */
+.hero {
+  margin-bottom: 3.5rem;
+}
+
+.role {
+  font-family: var(--font-mono);
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+}
+
+h1 {
+  font-size: 2.75rem; /* ปรับขนาดชื่อให้เด่นชัดและดูยิ่งใหญ่ขึ้น */
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.tagline {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #e2e8f0;
+  margin-bottom: 1.25rem;
+}
+
+.about {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+/* Links */
+.links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.links a {
+  display: inline-block;
+  padding: 0.5rem 1.1rem;
+  background-color: var(--panel-bg);
+  color: #e2e8f0;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid var(--border-color);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); /* แอนิเมชันสมูทขึ้น */
+}
+
+.links a:hover {
+  border-color: var(--accent);
+  color: var(--text-primary);
+  background-color: rgba(96, 165, 250, 0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--accent-glow); /* เอฟเฟกต์ปุ่มเรืองแสง */
+}
+
+/* Section Common */
+section {
+  margin-bottom: 3.5rem;
+}
+
+h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border-color); /* เส้นบางและหรูขึ้น */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Now Section */
+.now {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.now li {
+  position: relative;
+  padding-left: 1.75rem;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+}
+
+.now li::before {
+  content: "→"; /* เปลี่ยนสัญลักษณ์ให้ดู Clean มีทิศทาง */
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+.now li:hover::before {
+  transform: translateX(3px); /* เลื่อนลูกศรไปข้างหน้าเล็กน้อยตอนชี้ข้อความ */
+}
+
+/* Network Panel */
+.panel {
+  background-color: var(--panel-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 1.25rem;
+  font-size: 0.9rem;
+  align-items: start;
+}
+
+dt {
+  font-weight: 600;
+  color: #cbd5e1;
+  font-family: var(--font-mono);
+}
+
+dd {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.note {
+  font-family: var(--font-sans);
+  font-size: 0.825rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.hint {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px dashed var(--border-color);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Footer */
+footer {
+  margin-top: 5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+footer a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+footer a:hover {
+  color: var(--text-primary);
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 2rem 1rem;
+  }
+  h1 {
+    font-size: 2.25rem;
+  }
+  .row {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+}
