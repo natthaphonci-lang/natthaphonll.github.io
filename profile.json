@@ -1,0 +1,26 @@
+{
+  "name": "Nattapon",
+  "role": "นักศึกษาวิศวกรรมคอมพิวเตอร์",
+  "accent": "#3b82f6",
+  "tagline": "Passionate about Systems, Web Performance & Networks",
+  "about": "นักศึกษาวิศวกรรมคอมพิวเตอร์ที่สนใจด้านการพัฒนาเว็บ ประสิทธิภาพระบบ และเครือข่ายคอมพิวเตอร์",
+  "now": [
+    "กำลังศึกษา Web Performance API และ Browser Rendering Pipeline",
+    "กำลังทำโปรเจกต์พัฒนา Personal Portfolio ด้วย HTML/CSS/JS ล้วน",
+    "เตรียมตัวสำหรับการเรียนและโปรเจกต์ในระดับชั้นปี"
+  ],
+  "links": [
+    {
+      "label": "GitHub",
+      "url": "https://github.com/Nattapon"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://linkedin.com"
+    },
+    {
+      "label": "Email",
+      "url": "mailto:student@example.com"
+    }
+  ]
+}
